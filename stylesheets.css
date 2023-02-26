@@ -1,18 +1,60 @@
-.ticTac {
+
+.container .ticTac {
     border-style: solid;
+    width: fit-content;
 }
 
 .row {
-    border-style: solid;
+    width: fit-content;
 }
+
 .col {
     border-style: solid;
+    border-width: 5px;
 }
+
+.A .one {
+    border-top-width: 10px;
+    border-left-width: 10px;
+}
+
+.B .one {
+    border-left-width: 10px;
+}
+
+.C .one {
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+}
+
+
+.A .two {
+    border-top-width: 10px;
+}
+
+.C .two {
+    border-bottom-width: 10px;
+}
+
+.A .three {
+    border-top-width: 10px;
+    border-right-width: 10px;
+}
+
+.B .three {
+    border-right-width: 10px;
+}
+
+.C .three {
+    border-bottom-width: 10px;
+    border-right-width: 10px;
+}
+
 
 .col .btn {
     width: 200px;
     height: 200px;
-    background-color: grey;
+    background-color:white;
 }
 
 #pTurn {
