@@ -1,0 +1,23 @@
+.ticTac {
+    border-style: solid;
+}
+
+.row {
+    border-style: solid;
+}
+.col {
+    border-style: solid;
+}
+
+.col .btn {
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+}
+
+#pTurn {
+    color: red;
+}
+
+
+
