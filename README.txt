@@ -4,6 +4,9 @@ This is my Week 11 FE Course Project. The assignment is to make a Tic Tac Toe Ga
 2/26/2023:
 Fixed the border on the grid so it looked better.
 Made it so once you use a square it becomes disabled and you can't use it again
+Added a function that checks all win conditions and if someone wins it disables
+the game and makes the text at the top display which player won.
+So far its a fully functioning Tic Tac Toe game!
 
 
 
@@ -19,5 +22,8 @@ Plan:
 Create a Grid   [DONE]
 Make each square in the grid interactive  [DONE]
 Create a turn system   [DONE]
-Create the three in a row win condition
+Create the three in a row win condition  [DONE]
+Make the grid work properly on smaller screens  [DONE]
 Make an alert that says the winner
+Create a tie function
+Style the page
