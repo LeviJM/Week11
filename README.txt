@@ -14,7 +14,8 @@ So far its a fully functioning Tic Tac Toe game!
 Created a 3x3 grid with buttons in each.
 When you click a button the color changes depending on which players turn it is.
 
-
+3/1/2023:
+Added a working refresh button to the grid.
 
 
 
@@ -24,6 +25,7 @@ Make each square in the grid interactive  [DONE]
 Create a turn system   [DONE]
 Create the three in a row win condition  [DONE]
 Make the grid work properly on smaller screens  [DONE]
-Make an alert that says the winner
-Create a tie function
+Add a working refresh button  [DONE]
+Make an alert that says the winner (bootstrap alert)
+Create a tie function (Tie counter Var)
 Style the page

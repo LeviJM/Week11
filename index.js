@@ -9,7 +9,7 @@ console.log(allSquares)
 function pOneWin(){
     playerTurn.textContent = 'P1 WINS!';
     playerTurn.style.color = 'red';
-    buttons.forEach(button => {
+    allSquares.forEach(button => {
         button.disabled = true;
     });
 };
@@ -17,7 +17,7 @@ function pOneWin(){
 function pTwoWin(){
     playerTurn.textContent = 'P2 WINS!';
     playerTurn.style.color = 'blue';
-    buttons.forEach(button => {
+    allSquares.forEach(button => {
         button.disabled = true;
     });
 };
@@ -59,9 +59,27 @@ function checkWinner(){
     } else if(allSquares[2].style.backgroundColor == 'blue' && allSquares[4].style.backgroundColor == 'blue' && allSquares[6].style.backgroundColor == 'blue'){
         pTwoWin();
 }};
-    
+
+var refresh = Array.from(document.getElementsByClassName('refresh'));
+function ref() {
+    refresh.forEach(button => {
+        button.addEventListener('click' , () => {
+            allSquares.forEach(button => {
+                button.style.backgroundColor = 'white';
+                button.disabled = false;
+                pOneTurn = true;
+                playerTurn.textContent = 'P1 TURN!';
+                playerTurn.style.color = 'red';
+            });
+        });
+    });  
+};
+
+
 /////Turn System
-buttons.forEach(button => {
+allSquares.forEach(button => {
+    console.log(buttons);
+    console.log(button);
     button.addEventListener('click', () => {
         if(pOneTurn == true){
             button.style.backgroundColor = 'red';
@@ -75,6 +93,8 @@ buttons.forEach(button => {
             playerTurn.style.color = 'red';
     }
       button.disabled = true;
+      ref()
       checkWinner()
     });
 });
+
