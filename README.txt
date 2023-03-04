@@ -17,6 +17,10 @@ When you click a button the color changes depending on which players turn it is.
 3/1/2023:
 Added a working refresh button to the grid.
 
+3/4/2023:
+Added a tie function
+Added bootstrap alerts for P1 win P2 win or Tie 
+
 
 
 Plan:
@@ -26,6 +30,5 @@ Create a turn system   [DONE]
 Create the three in a row win condition  [DONE]
 Make the grid work properly on smaller screens  [DONE]
 Add a working refresh button  [DONE]
-Make an alert that says the winner (bootstrap alert)
-Create a tie function (Tie counter Var)
-Style the page
+Make an alert that says the winner [DONE]
+Create a tie function [DONE]

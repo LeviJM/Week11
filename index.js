@@ -1,14 +1,23 @@
 const buttons = document.querySelectorAll('.btn');
 const playerTurn = document.getElementById('pTurn');
 var pOneTurn = true;
+var tieCounter = 0;
+var rfrsh = false;
 
 /////Win Conditions
 const allSquares = Array.from(document.getElementsByClassName('toe'));
-console.log(allSquares)
+const winAlert = document.createElement('div');
+var winText = document.createTextNode('');
+winAlert.className = "alert alert-success";
+winAlert.role = 'alert';
+winAlert.appendChild(winText)
+
 
 function pOneWin(){
     playerTurn.textContent = 'P1 WINS!';
     playerTurn.style.color = 'red';
+    winText.textContent = 'Good Job Player 1!';
+    playerTurn.before(winAlert);
     allSquares.forEach(button => {
         button.disabled = true;
     });
@@ -17,9 +26,20 @@ function pOneWin(){
 function pTwoWin(){
     playerTurn.textContent = 'P2 WINS!';
     playerTurn.style.color = 'blue';
+    winText.textContent = 'Good Job Player 2!';
+    playerTurn.before(winAlert);
     allSquares.forEach(button => {
         button.disabled = true;
     });
+};
+
+function checkTie(){
+    if(tieCounter == 9){
+        playerTurn.textContent = 'TIE NO ONE WINS!';
+        playerTurn.style.color = 'purple';
+        winText.textContent = 'Oops! Try Again!';
+        playerTurn.before(winAlert);
+    }
 };
 
 function checkWinner(){
@@ -70,31 +90,46 @@ function ref() {
                 pOneTurn = true;
                 playerTurn.textContent = 'P1 TURN!';
                 playerTurn.style.color = 'red';
+                tieCounter = 0;
+                rfrsh = true;
             });
         });
     });  
 };
 
+function alertRefresh(){
+    if(rfrsh == true){
+        winAlert.remove();
+        rfrsh = false;
+    };
+};
+
 
 /////Turn System
 allSquares.forEach(button => {
-    console.log(buttons);
-    console.log(button);
     button.addEventListener('click', () => {
         if(pOneTurn == true){
             button.style.backgroundColor = 'red';
+            button.textContent = 'X';
+            button.style.color = "white";
             pOneTurn = false;
             playerTurn.textContent = 'P2 TURN!';
             playerTurn.style.color = 'blue';
         } else {
             button.style.backgroundColor = 'blue';
+            button.textContent = 'O';
+            button.style.color = "white";
             pOneTurn = true;
             playerTurn.textContent = 'P1 TURN!';
             playerTurn.style.color = 'red';
     }
       button.disabled = true;
-      ref()
-      checkWinner()
+      tieCounter += 1;
+      console.log(tieCounter)
+      ref();
+      alertRefresh();
+      checkTie();
+      checkWinner();
     });
 });
 
